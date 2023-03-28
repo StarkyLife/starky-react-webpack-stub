@@ -1,0 +1,18 @@
+version: "3.3"
+services:
+  web:
+    build: .
+    ports:
+      - "8080:8080"
+  int-tests:
+    build: .
+    command: "yarn test:int"
+  e2e-tests:
+    image: cypress/included:12.8.1
+    working_dir: /e2e
+    volumes:
+      - .:/e2e
+    environment:
+      - CYPRESS_baseUrl=http://web:8080
+    depends_on:
+      - web
