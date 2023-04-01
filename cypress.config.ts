@@ -1,4 +1,4 @@
-import { defineConfig } from "cypress";
+import { defineConfig } from 'cypress';
 
 export default defineConfig({
   e2e: {
@@ -7,6 +7,6 @@ export default defineConfig({
     },
     video: false,
     screenshotsFolder: false,
-    baseUrl: 'http://localhost:8080'
+    baseUrl: 'http://localhost:8080',
   },
 });

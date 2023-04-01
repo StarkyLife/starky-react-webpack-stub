@@ -1,12 +1,15 @@
-version: "3.3"
+version: '3.3'
 services:
+  # to mock external apis use https://www.mock-server.com/
   web:
+    image: starky/web-app
     build: .
     ports:
-      - "8080:8080"
+      - '8080:8080'
   int-tests:
+    image: starky/web-app
     build: .
-    command: "yarn test:int"
+    command: 'yarn test:int'
   e2e-tests:
     image: cypress/included:12.8.1
     working_dir: /e2e

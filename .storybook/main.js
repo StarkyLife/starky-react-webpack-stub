@@ -10,4 +10,3 @@ module.exports = {
     builder: '@storybook/builder-webpack5',
   },
 };
-
